@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thelma &amp; Louise — Abbigliamento uomo e donna a Calolziocorte dal 2001</title>
+<meta name="description" content="Thelma & Louise, negozio di abbigliamento uomo e donna a Calolziocorte (LC) dal 2001. Maglieria, camiceria, accessori, calzature e pelletteria. Tommy Hilfiger, U.S. Polo Assn., Please, Dixie, Imperial e altri brand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f5efe6;
+    --paper:#fbf8f3;
+    --ink:#1f1a17;
+    --muted:#6e635a;
+    --wine:#7a2e2a;
+    --wine-dark:#5c201d;
+    --sand:#d9c7ae;
+    --sky:#c8d6dc;
+    --line:rgba(31,26,23,.14);
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'DM Sans', system-ui, sans-serif;
+    --max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--wine);font-weight:700}
+  h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.08;letter-spacing:-.01em}
+  h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+  em{font-style:italic;color:var(--wine)}
+  .btn{display:inline-flex;align-items:center;gap:.6em;padding:14px 26px;border-radius:999px;font-weight:500;font-size:.95rem;transition:.25s}
+  .btn-dark{background:var(--ink);color:var(--paper)}
+  .btn-dark:hover{background:var(--wine)}
+  .btn-line{border:1px solid var(--ink)}
+  .btn-line:hover{background:var(--ink);color:var(--paper)}
+
+  /* Top bar + header */
+  .topbar{background:var(--wine);color:#f3e6dc;font-size:.8rem;text-align:center;padding:8px 16px;letter-spacing:.04em}
+  header{position:sticky;top:0;z-index:50;background:rgba(251,248,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:var(--serif);font-size:1.6rem;font-weight:500;letter-spacing:-.02em}
+  .logo span{font-style:italic;color:var(--wine);font-weight:300}
+  .logo small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:-2px}
+  .menu{display:flex;gap:32px;list-style:none;font-size:.92rem}
+  .menu a{position:relative;padding:4px 0}
+  .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--wine);transition:.25s}
+  .menu a:hover::after{width:100%}
+  .nav-cta{display:flex;gap:12px;align-items:center}
+  .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+  .burger span{display:block;height:1.5px;background:var(--ink);margin:7px 8px;transition:.3s}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:var(--cream)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;min-height:min(86vh,760px);padding:64px 0}
+  .hero h1{font-size:clamp(2.8rem,6.6vw,5.6rem);margin:18px 0 24px}
+  .hero p.lead{font-size:1.12rem;color:var(--muted);max-width:30em;margin-bottom:34px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-visual{position:relative;height:100%;min-height:520px}
+  .ph{position:absolute;border-radius:6px;overflow:hidden;display:flex;align-items:flex-end;padding:18px;color:rgba(31,26,23,.55);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+  .ph::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.18) 0 2px,transparent 2px 14px)}
+  .ph span{position:relative}
+  .ph-1{inset:0 22% 18% 0;background:linear-gradient(160deg,var(--sand),#bfa385)}
+  .ph-2{right:0;bottom:0;width:48%;height:52%;background:linear-gradient(160deg,var(--sky),#9fb4bd);border:8px solid var(--cream)}
+  .badge{position:absolute;left:-28px;bottom:9%;width:140px;height:140px;border-radius:50%;background:var(--wine);color:#f3e6dc;display:grid;place-items:center;text-align:center;font-family:var(--serif);box-shadow:0 18px 40px rgba(92,32,29,.25);animation:float 6s ease-in-out infinite}
+  .badge b{display:block;font-size:2.1rem;font-weight:300;line-height:1}
+  .badge small{font-family:var(--sans);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase}
+  @keyframes float{50%{transform:translateY(-10px)}}
+
+  /* Marquee brand */
+  .brands{background:var(--ink);color:var(--paper);overflow:hidden;padding:22px 0;white-space:nowrap}
+  .track{display:inline-flex;gap:56px;animation:scroll 32s linear infinite;font-family:var(--serif);font-size:1.6rem;font-weight:300}
+  .track span{display:inline-flex;align-items:center;gap:56px}
+  .track span::after{content:"✦";font-size:.8rem;color:var(--sand)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section{padding:110px 0}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+  .head p{max-width:34em;color:var(--muted)}
+
+  /* Chi siamo */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+  .about-visual{position:relative;aspect-ratio:4/5}
+  .about-visual .ph{inset:0;background:linear-gradient(170deg,#e4d5c1,#c9ad8c)}
+  .about-text p{color:var(--muted);margin:20px 0;font-size:1.05rem}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
+  .stats b{font-family:var(--serif);font-size:2.6rem;font-weight:300;display:block;line-height:1}
+  .stats small{color:var(--muted);font-size:.85rem}
+
+  /* Collezioni */
+  .collections{background:var(--cream)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{position:relative;aspect-ratio:3/4;border-radius:6px;overflow:hidden;cursor:pointer}
+  .card .ph{inset:0;transition:transform .7s ease}
+  .card:hover .ph{transform:scale(1.04)}
+  .card-1 .ph{background:linear-gradient(170deg,#e9cfc4,#b98476)}
+  .card-2 .ph{background:linear-gradient(170deg,#cdd8dd,#7f99a5)}
+  .card-3 .ph{background:linear-gradient(170deg,#e6dcc9,#a8916d)}
+  .card-info{position:absolute;left:0;right:0;bottom:0;padding:28px;background:linear-gradient(transparent,rgba(31,26,23,.72));color:var(--paper)}
+  .card-info h3{font-size:2rem;margin-bottom:6px}
+  .card-info p{font-size:.9rem;opacity:.85}
+  .card .ph span{position:absolute;top:18px;left:18px}
+
+  /* Servizi */
+  .features{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+  .feature{padding:36px 28px 36px 0;border-right:1px solid var(--line)}
+  .feature + .feature{padding-left:28px}
+  .feature:last-child{border-right:0}
+  .feature .ico{width:44px;height:44px;border-radius:50%;background:var(--cream);display:grid;place-items:center;margin-bottom:20px;color:var(--wine)}
+  .feature h3{font-size:1.3rem;margin-bottom:8px;font-weight:500}
+  .feature p{color:var(--muted);font-size:.92rem}
+
+  /* Recensioni */
+  .reviews{background:var(--wine);color:#f3e6dc;text-align:center}
+  .reviews .eyebrow{color:var(--sand)}
+  .stars{font-size:1.6rem;letter-spacing:6px;color:#f1c98b;margin:20px 0}
+  .reviews h2{max-width:18em;margin:0 auto 22px}
+  .reviews h2 em{color:var(--sand)}
+  .reviews p{opacity:.8;max-width:36em;margin:0 auto 34px}
+  .reviews .btn-line{border-color:#f3e6dc}
+  .reviews .btn-line:hover{background:#f3e6dc;color:var(--wine)}
+
+  /* Social: banner fisso */
+  .ig-banner{position:relative;display:block;min-height:340px;border-radius:6px;overflow:hidden}
+  .ig-banner .ph{inset:0;background:linear-gradient(120deg,#ead9c6,#c2a07d 55%,#ad7a6c);transition:transform .7s ease}
+  .ig-banner:hover .ph{transform:scale(1.03)}
+  .ig-banner .ph span{position:absolute;top:18px;right:18px}
+  .ig-text{position:absolute;left:0;bottom:0;right:0;padding:40px;background:linear-gradient(transparent,rgba(31,26,23,.75));color:var(--paper)}
+  .ig-handle{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+  .ig-text h3{font-size:clamp(1.5rem,3vw,2.3rem);max-width:20em;margin:10px 0 14px}
+  .ig-link{font-weight:500;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+  /* Contatti */
+  .visit{background:var(--cream)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+  .hours{list-style:none;margin:28px 0 12px}
+  .hours li{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);font-size:.98rem}
+  .hours li.today{color:var(--wine);font-weight:700}
+  .hours li.today::before{content:"Oggi · ";font-weight:400;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-right:auto;padding-right:10px;align-self:center}
+  .hours li.today span:first-child{margin-right:auto}
+  .note{font-size:.8rem;color:var(--muted)}
+  .contact-list{list-style:none;margin:32px 0}
+  .contact-list li{display:flex;gap:14px;padding:10px 0;align-items:flex-start}
+  .contact-list svg{flex:none;margin-top:4px;color:var(--wine)}
+  .map{border-radius:6px;overflow:hidden;min-height:440px;height:100%;border:1px solid var(--line)}
+  .map iframe{width:100%;height:100%;min-height:440px;border:0;filter:grayscale(.35) sepia(.12)}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(251,248,243,.7);padding:64px 0 28px;font-size:.88rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+  footer .logo{color:var(--paper)}
+  footer .logo span{color:var(--sand)}
+  footer h4{color:var(--paper);font-weight:500;margin-bottom:14px;font-size:.95rem}
+  footer ul{list-style:none}
+  footer li{padding:4px 0}
+  footer a:hover{color:var(--paper)}
+  .legal{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:960px){
+    .menu,.nav-cta .btn{display:none}
+    .burger{display:block}
+    .menu.open{display:flex;flex-direction:column;position:absolute;top:74px;left:0;right:0;background:var(--paper);padding:24px;gap:18px;border-bottom:1px solid var(--line);font-size:1.1rem}
+    .hero-grid,.about-grid,.visit-grid{grid-template-columns:1fr}
+    .hero-visual{min-height:420px}
+    .badge{left:12px;width:118px;height:118px}
+    .cards{grid-template-columns:1fr 1fr}
+    .features{grid-template-columns:1fr 1fr}
+    .feature,.feature + .feature{padding:28px 20px;border-right:0;border-bottom:1px solid var(--line)}
+    .foot-grid{grid-template-columns:1fr}
+    section{padding:80px 0}
+  }
+  @media (max-width:600px){
+    .cards,.features{grid-template-columns:1fr}
+    .card{aspect-ratio:4/3}
+    .ig-text{padding:24px}
+    .stats b{font-size:2rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Dal 2001 in Via Galli a Calolziocorte · Abbigliamento uomo e donna</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Thelma <span>&amp;</span> Louise<small>Abbigliamento · Calolziocorte</small></a>
+    <ul class="menu" id="menu">
+      <li><a href="#chi-siamo">Chi siamo</a></li>
+      <li><a href="#collezioni">Collezioni</a></li>
+      <li><a href="#servizi">In negozio</a></li>
+      <li><a href="#contatti">Orari e contatti</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:+390341630993" class="btn btn-dark">Chiamaci</a>
+      <button class="burger" id="burger" aria-label="Apri menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">Uomo · Donna · Accessori</div>
+      <h1>Lo stile giusto,<br>scelto <em>con te.</em></h1>
+      <p class="lead">Da oltre vent'anni a Calolziocorte selezioniamo capi, maglieria, calzature e accessori dei migliori brand, e li scegliamo insieme a te, con consigli sinceri.</p>
+      <div class="hero-actions">
+        <a href="#collezioni" class="btn btn-dark">Scopri le collezioni →</a>
+        <a href="#contatti" class="btn btn-line">Vieni a trovarci</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <!-- SOSTITUIRE con foto reali del negozio / dei capi -->
+      <div class="ph ph-1"><span>Foto vetrina / collezione</span></div>
+      <div class="ph ph-2"><span>Foto dettaglio</span></div>
+      <div class="badge"><div><small>dal</small><b>2001</b><small>a Calolzio</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND -->
+<div class="brands" aria-label="Brand trattati">
+  <div class="track">
+    <span>Tommy Hilfiger</span><span>U.S. Polo Assn.</span><span>Please</span><span>Gaudì</span><span>Imperial</span><span>Dixie</span><span>Sunway</span><span>ApeLab</span>
+    <span>Tommy Hilfiger</span><span>U.S. Polo Assn.</span><span>Please</span><span>Gaudì</span><span>Imperial</span><span>Dixie</span><span>Sunway</span><span>ApeLab</span>
+  </div>
+</div>
+
+<!-- CHI SIAMO -->
+<section id="chi-siamo">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <div class="ph"><span>Foto interno negozio / staff</span></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="eyebrow">Chi siamo</div>
+      <h2 style="margin-top:14px">Un negozio di paese,<br>con un <em>gusto</em> che viaggia.</h2>
+      <p>Thelma &amp; Louise apre le sue porte nel 2001 in Via Attilio Galli, a Calolziocorte. Da allora è diventato un punto di riferimento per chi cerca abbigliamento uomo e donna di qualità, senza rinunciare a un rapporto diretto e a un consiglio su misura.</p>
+      <p>Ogni stagione selezioniamo con cura le nuove collezioni: maglieria, camiceria, capispalla, calzature e pelletteria, per un look completo dalla testa ai piedi.</p>
+      <div class="stats">
+        <div><b>2001</b><small>l'anno di apertura</small></div>
+        <div><b>8+</b><small>brand selezionati</small></div>
+        <div><b>5,0★</b><small>media recensioni Google</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLEZIONI -->
+<section id="collezioni" class="collections">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">Collezioni</div>
+        <h2 style="margin-top:14px">Le collezioni <em>di stagione</em></h2>
+      </div>
+      <p>Ogni stagione rinnoviamo la selezione in negozio. Passa a provarle o seguici sui social per vedere i nuovi arrivi in anteprima.</p>
+    </div>
+    <div class="cards">
+      <a href="#contatti" class="card card-1 reveal">
+        <div class="ph"><span>Foto donna</span></div>
+        <div class="card-info"><h3>Donna</h3><p>Maglieria, camicie, abiti e capispalla</p></div>
+      </a>
+      <a href="#contatti" class="card card-2 reveal">
+        <div class="ph"><span>Foto uomo</span></div>
+        <div class="card-info"><h3>Uomo</h3><p>Casual, camiceria e maglieria</p></div>
+      </a>
+      <a href="#contatti" class="card card-3 reveal">
+        <div class="ph"><span>Foto accessori</span></div>
+        <div class="card-info"><h3>Accessori</h3><p>Calzature, borse e pelletteria</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIZI -->
+<section id="servizi">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">In negozio</div>
+        <h2 style="margin-top:14px">Fare shopping, <em>con calma.</em></h2>
+      </div>
+    </div>
+    <div class="features reveal">
+      <div class="feature">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>Consulenza di stile</h3>
+        <p>Ti aiutiamo a scegliere capi e abbinamenti, per te o per un regalo.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <h3>Pagamenti facili</h3>
+        <p>Carte di credito, bancomat e pagamenti contactless da smartphone.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg></div>
+        <h3>Parcheggio accessibile</h3>
+        <p>Parcheggio accessibile anche in sedia a rotelle, vicino al negozio.</p>
+      </div>
+      <div class="feature">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+        <h3>Eventi e promozioni</h3>
+        <p>Saldi, promozioni e piccoli eventi con le realtà del territorio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENSIONI -->
+<section class="reviews">
+  <div class="wrap reveal">
+    <div class="eyebrow">Dicono di noi</div>
+    <div class="stars">★★★★★</div>
+    <h2>5 stelle su Google: <em>grazie</em> a chi ci sceglie ogni stagione.</h2>
+    <p>Chi passa da noi apprezza soprattutto la disponibilità nel dare consigli e la cura nella selezione dei capi.</p>
+    <!-- Inserire il link alla scheda Google del negozio -->
+    <a href="#" class="btn btn-line">Leggi le recensioni su Google</a>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section>
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">Seguici</div>
+        <h2 style="margin-top:14px">I nuovi arrivi, <em>ogni settimana.</em></h2>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://www.instagram.com/thelmaelouise.calolziocorte/" target="_blank" rel="noopener" class="btn btn-dark">Instagram</a>
+        <a href="https://www.facebook.com/ThelmaLouiseCalolziocorte/" target="_blank" rel="noopener" class="btn btn-line">Facebook</a>
+      </div>
+    </div>
+    <!-- Banner fisso: SOSTITUIRE il segnaposto con una foto del negozio (non va mai aggiornato) -->
+    <a href="https://www.instagram.com/thelmaelouise.calolziocorte/" target="_blank" rel="noopener" class="ig-banner reveal">
+      <div class="ph"><span>Foto vetrina / negozio</span></div>
+      <div class="ig-text">
+        <span class="ig-handle">@thelmaelouise.calolziocorte</span>
+        <h3>Novità, promozioni ed eventi li raccontiamo prima su Instagram.</h3>
+        <span class="ig-link">Apri il profilo →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ORARI E CONTATTI -->
+<section id="contatti" class="visit">
+  <div class="wrap visit-grid">
+    <div class="reveal">
+      <div class="eyebrow">Orari e contatti</div>
+      <h2 style="margin-top:14px">Ti aspettiamo <em>in negozio.</em></h2>
+      <!-- VERIFICARE con il negozio: le fonti online non concordano sul lunedì -->
+      <ul class="hours" id="hours">
+        <li data-day="1"><span>Lunedì</span><span>Chiuso</span></li>
+        <li data-day="2"><span>Martedì</span><span>9:30–12:30 · 15:00–19:00</span></li>
+        <li data-day="3"><span>Mercoledì</span><span>9:30–12:30 · 15:00–19:00</span></li>
+        <li data-day="4"><span>Giovedì</span><span>9:30–12:30 · 15:00–19:00</span></li>
+        <li data-day="5"><span>Venerdì</span><span>9:30–12:30 · 15:00–19:00</span></li>
+        <li data-day="6"><span>Sabato</span><span>9:30–12:30 · 15:00–19:00</span></li>
+        <li data-day="0"><span>Domenica</span><span>Chiuso</span></li>
+      </ul>
+      <p class="note">Nei periodi festivi gli orari possono variare: seguici sui social per gli aggiornamenti.</p>
+      <ul class="contact-list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Via Attilio Galli 1/A<br>23801 Calolziocorte (LC)</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+390341630993">0341 630993</a></li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Attilio+Galli+1A+Calolziocorte+LC" target="_blank" rel="noopener" class="btn btn-dark">Indicazioni stradali</a>
+        <a href="tel:+390341630993" class="btn btn-line">Chiama ora</a>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe title="Mappa Thelma &amp; Louise" loading="lazy" src="https://maps.google.com/maps?q=Via%20Attilio%20Galli%201A%2C%2023801%20Calolziocorte%20LC&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">Thelma <span>&amp;</span> Louise</div>
+        <p style="margin-top:14px;max-width:26em">Abbigliamento uomo e donna, maglieria, camiceria, accessori, calzature e pelletteria a Calolziocorte dal 2001.</p>
+      </div>
+      <div>
+        <h4>Negozio</h4>
+        <ul>
+          <li>Via Attilio Galli 1/A</li>
+          <li>23801 Calolziocorte (LC)</li>
+          <li><a href="tel:+390341630993">0341 630993</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Seguici</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/thelmaelouise.calolziocorte/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/ThelmaLouiseCalolziocorte/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="y"></span> Thelma &amp; Louise di Valsecchi Jessica e C. S.n.c. · P.IVA 02617520131</span>
+      <span><a href="#">Privacy</a> · <a href="#">Cookie</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Menu mobile
+  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+  // Evidenzia il giorno corrente negli orari
+  const today=new Date().getDay();
+  const li=document.querySelector('#hours li[data-day="'+today+'"]');
+  if(li) li.classList.add('today');
+
+  document.getElementById('y').textContent=new Date().getFullYear();
+
+  // Animazione all'ingresso delle sezioni
+  const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
